@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+.././include/coroutine.h
+stdint.h
+-
+ucontext.h
+-
+
+.././include/schedule.h
+queue
+-
+map
+-
+
+/mnt/shared/cloud/src/schedule.cpp
+ucontext.h
+-
+assert.h
+-
+memory.h
+-
+schedule.h
+/mnt/shared/cloud/src/schedule.h
+coroutine.h
+/mnt/shared/cloud/src/coroutine.h
+

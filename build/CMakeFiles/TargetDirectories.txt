@@ -1,0 +1,3 @@
+/mnt/shared/cloud/build/src/CMakeFiles/cloud.dir
+/mnt/shared/cloud/build/src/CMakeFiles/cloud_so.dir
+/mnt/shared/cloud/build/test/CMakeFiles/test.dir

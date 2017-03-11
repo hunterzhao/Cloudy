@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../lib/libcloud.a  CMakeFiles/cloud.dir/coqueue.cpp.o CMakeFiles/cloud.dir/coroutine.cpp.o CMakeFiles/cloud.dir/schedule.cpp.o CMakeFiles/cloud.dir/cloudmessage.cpp.o
+/usr/bin/ranlib ../../lib/libcloud.a

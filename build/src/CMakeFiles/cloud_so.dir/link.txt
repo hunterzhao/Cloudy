@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -g -std=c++11 -Wall -o0   -shared -Wl,-soname,libcloud.so -o ../../lib/libcloud.so CMakeFiles/cloud_so.dir/coqueue.cpp.o CMakeFiles/cloud_so.dir/coroutine.cpp.o CMakeFiles/cloud_so.dir/schedule.cpp.o CMakeFiles/cloud_so.dir/cloudmessage.cpp.o  -L/mnt/shared/cloud/lib 
