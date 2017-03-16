@@ -40,8 +40,8 @@ void Coqueue::WaitWrite(CloudMessage& val, Coroutine* co) {
     size_++;
     
     co->SetStatus(COR_BLOCK);
-    Schedule::Instance().AddTask(co);
-    // wake the coroutine block in this queue
+    Schedule::Instance().AddMission(co);
+    // wake one coroutine block in this queue
     block_read_->WakeBlock();
     // 让出调度器
     Schedule::Instance().YieldCo(co);

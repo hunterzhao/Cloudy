@@ -3,6 +3,7 @@
 
 #include <queue>
 #include <assert.h>
+#include <unistd.h>
 #include "coroutine.h"
 #include "schedule.h"
 
@@ -11,11 +12,14 @@ class Block {
 public:
    void WakeBlock() { 	   
        /* add to task list in schedule */
-    if(!block_queue_.empty()) {
+     if (!block_queue_.empty()) {
    	   Coroutine* co = block_queue_.front();
        assert(co->GetStatus() == COR_BLOCK);
    	   block_queue_.pop();
-   	   Schedule::Instance().AddTask(co);
+       uint64_t u = 1;
+       write(co->GetFd(), &u, sizeof(uint64_t));
+   	   //Schedule::Instance().AddTask(co);
+
      }
    }
    void AddBlock(Coroutine* co) {

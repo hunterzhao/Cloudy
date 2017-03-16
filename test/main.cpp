@@ -56,17 +56,17 @@ public:
 
 int main() {
 
-    StageA* stageA = new StageA;
-    stageA->SetId(kStageAID);
-    stageA->SetQueue(CoqueueMgr::Instance().CreateQueue(kStageAID));
-    Schedule::Instance().AddTask(stageA);
+   
     
     StageB* stageB = new StageB;
     stageB->SetId(kStageBID);
     stageB->SetQueue(CoqueueMgr::Instance().CreateQueue(kStageBID));
     Schedule::Instance().AddTask(stageB);
     
-   
+    StageA* stageA = new StageA;
+    stageA->SetId(kStageAID);
+    stageA->SetQueue(CoqueueMgr::Instance().CreateQueue(kStageAID));
+    Schedule::Instance().AddTask(stageA);
     //CoqueueMgr::Instance().SendMessage(kStageAID, msg, stageB);
 
     Schedule::Instance().Loop();

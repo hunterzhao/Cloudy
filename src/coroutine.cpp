@@ -1,10 +1,17 @@
+#include <sys/eventfd.h>
 #include "coroutine.h"
 #include "cloudmessage.h"
 #include "coqueue.h"
-#include <iostream>
+
+#define handle_error(msg) \
+    do { perror(msg); exit(1); } while (0)
+
 namespace cloud {
 Coroutine::Coroutine() 
-   :id_(-1), cap_(0), size_(0), status_(COR_READY), stack_(nullptr) {}
+   :id_(-1), cap_(0), size_(0), status_(COR_READY), stack_(nullptr) {
+    if ( (fd_ = eventfd(0, EFD_NONBLOCK)) == -1 )
+             handle_error("eventfd failed");
+}
 
 Coroutine::~Coroutine() {
     if (nullptr != stack_) {

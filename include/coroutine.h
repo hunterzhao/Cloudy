@@ -30,6 +30,8 @@ public:
 
     void SetStatus(int status) {status_ = status;}
 
+    int GetFd() { return fd_;}
+
     virtual int OnStart() {return 0;}
 	
 	virtual int OnEvent(CloudMessage& msg) = 0;
@@ -46,6 +48,7 @@ private:
 	char* stack_;
 	ucontext_t ctx_;
 	Coqueue* queue_;
+	int fd_;
 };
 }
 #endif
