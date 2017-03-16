@@ -32,7 +32,7 @@ public:
 
     virtual int OnStart() {return 0;}
 	
-	virtual int OnEvent(CloudMessage* msg) = 0;
+	virtual int OnEvent(CloudMessage& msg) = 0;
     
     virtual int OnStop() { return 0;}
 	

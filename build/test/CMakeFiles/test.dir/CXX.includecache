@@ -233,6 +233,8 @@ map
 -
 queue
 -
+cloudmessage.h
+.././include/cloudmessage.h
 
 .././include/coroutine.h
 stdint.h
@@ -246,17 +248,17 @@ queue
 map
 -
 
-/mnt/shared/cloud/test/main.cpp
+/mnt/shared/Cloudy/test/main.cpp
 iostream
 -
 coqueue.h
-/mnt/shared/cloud/test/coqueue.h
+/mnt/shared/Cloudy/test/coqueue.h
 coroutine.h
-/mnt/shared/cloud/test/coroutine.h
+/mnt/shared/Cloudy/test/coroutine.h
 cloudmessage.h
-/mnt/shared/cloud/test/cloudmessage.h
+/mnt/shared/Cloudy/test/cloudmessage.h
 schedule.h
-/mnt/shared/cloud/test/schedule.h
+/mnt/shared/Cloudy/test/schedule.h
 coqueue.h
-/mnt/shared/cloud/test/coqueue.h
+/mnt/shared/Cloudy/test/coqueue.h
 

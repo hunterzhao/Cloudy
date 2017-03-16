@@ -4,10 +4,10 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/shared/cloud/src/cloudmessage.cpp" "/mnt/shared/cloud/build/src/CMakeFiles/cloud.dir/cloudmessage.cpp.o"
-  "/mnt/shared/cloud/src/coqueue.cpp" "/mnt/shared/cloud/build/src/CMakeFiles/cloud.dir/coqueue.cpp.o"
-  "/mnt/shared/cloud/src/coroutine.cpp" "/mnt/shared/cloud/build/src/CMakeFiles/cloud.dir/coroutine.cpp.o"
-  "/mnt/shared/cloud/src/schedule.cpp" "/mnt/shared/cloud/build/src/CMakeFiles/cloud.dir/schedule.cpp.o"
+  "/mnt/shared/Cloudy/src/cloudmessage.cpp" "/mnt/shared/Cloudy/build/src/CMakeFiles/cloud.dir/cloudmessage.cpp.o"
+  "/mnt/shared/Cloudy/src/coqueue.cpp" "/mnt/shared/Cloudy/build/src/CMakeFiles/cloud.dir/coqueue.cpp.o"
+  "/mnt/shared/Cloudy/src/coroutine.cpp" "/mnt/shared/Cloudy/build/src/CMakeFiles/cloud.dir/coroutine.cpp.o"
+  "/mnt/shared/Cloudy/src/schedule.cpp" "/mnt/shared/Cloudy/build/src/CMakeFiles/cloud.dir/schedule.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

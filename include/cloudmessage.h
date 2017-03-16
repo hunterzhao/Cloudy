@@ -19,7 +19,11 @@ public:
 
    CloudMessage(const char* str);
 
-   CloudMessage(CloudMessage&);
+   CloudMessage(const CloudMessage&);
+   
+   CloudMessage(CloudMessage&& msg) noexcept;
+   
+   CloudMessage& operator=(CloudMessage&& msg) noexcept; 
 
    CloudMessage& operator=(CloudMessage&);
 
@@ -37,11 +41,11 @@ public:
 
    void SetData(const char* data, size_t data_len);
 
-   char* GetData();
+   char* GetData() const;
 
-   std::size_t* GetCount();
+   std::size_t* GetCount() const;
 
-   std::size_t GetDataLen();
+   std::size_t GetDataLen() const;
 
    void AddCount();
 
@@ -49,7 +53,7 @@ public:
 
 private: 
    char *data_ = nullptr;
-   std::size_t *count_ = 0;
+   std::size_t *count_ = nullptr;
    std::size_t data_len_ = 0;
    rapidjson::Document document_;
 };

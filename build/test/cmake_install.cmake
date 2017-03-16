@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/shared/cloud/test
+# Install script for directory: /mnt/shared/Cloudy/test
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)

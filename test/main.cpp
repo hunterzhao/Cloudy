@@ -13,15 +13,16 @@ static const int64_t kStageBID = 112;
 class StageA : public Coroutine {
 public:
     int OnStart() override {
-        CloudMessage* msg = new CloudMessage();
-        msg->SetData("hello", 6);     
+        CloudMessage msg;
+        msg.SetData("hello", 6);     
         CoqueueMgr::Instance().SendMessage(kStageBID, msg, this);
-        std::cout<<"message already send"<<std::endl;
+        std::cout<<"A:message already send"<<std::endl;
         return 0;
     }
 
-    int OnEvent(CloudMessage* msg) override {
-        
+    int OnEvent(CloudMessage& msg) override {
+        std::cout<<"A:"<<msg.GetData()<<std::endl;
+        // LOG->info("message get {}", msg->data);
         return 0;
     }
 
@@ -36,9 +37,15 @@ public:
         return 0;
     }
 
-    int OnEvent(CloudMessage* msg) override {
-        std::cout<<msg->GetData()<<std::endl;
+    int OnEvent(CloudMessage& msg) override {
+
+        std::cout<<"B"<<msg.GetData()<<std::endl;
         // LOG->info("message get {}", msg->data);
+
+        CloudMessage msg2;
+        msg2.SetData("world", 6);     
+        CoqueueMgr::Instance().SendMessage(kStageAID, msg2, this);
+        std::cout<<"B:message already send"<<std::endl;
         return 0;
     }
 
@@ -63,7 +70,8 @@ int main() {
     //CoqueueMgr::Instance().SendMessage(kStageAID, msg, stageB);
 
     Schedule::Instance().Loop();
-
+    delete stageA;
+    delete stageB;
 
 //    TestServer *server = new TestServer();
 //    QtpManager::Main().AddMember(server);

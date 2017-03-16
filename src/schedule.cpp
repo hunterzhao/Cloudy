@@ -80,8 +80,6 @@ void Schedule::YieldCo(Coroutine* co) {
     //备份
     SaveStack(co, stack_ + STACK_SIZE);   //将调度器中的的尾部的内容全部存到协程的stack里面
     running_ = -1;
-    co->status_ = COR_BLOCK;
-    AddTask(co);
     //协程把自己的栈存放到了S的stack的起始位置  切换到S main的栈空间
     swapcontext(&co->ctx_, &main_);
 } 

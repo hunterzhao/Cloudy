@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/shared/cloud
+CMAKE_SOURCE_DIR = /mnt/shared/Cloudy
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/shared/cloud/build
+CMAKE_BINARY_DIR = /mnt/shared/Cloudy/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,14 +69,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/shared/cloud/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/cloud/build/CMakeFiles /mnt/shared/cloud/build/src/CMakeFiles/progress.marks
-	cd /mnt/shared/cloud/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/cloud/build/CMakeFiles 0
+	cd /mnt/shared/Cloudy/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles /mnt/shared/Cloudy/build/src/CMakeFiles/progress.marks
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/shared/cloud/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -85,22 +85,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/shared/cloud/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/shared/cloud/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/shared/cloud/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /mnt/shared/Cloudy/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/cloud.dir/rule:
-	cd /mnt/shared/cloud/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/cloud.dir/rule
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/cloud.dir/rule
 .PHONY : src/CMakeFiles/cloud.dir/rule
 
 # Convenience name for target.
@@ -109,12 +109,12 @@ cloud: src/CMakeFiles/cloud.dir/rule
 
 # fast build rule for target.
 cloud/fast:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/build
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/build
 .PHONY : cloud/fast
 
 # Convenience name for target.
 src/CMakeFiles/cloud_so.dir/rule:
-	cd /mnt/shared/cloud/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/cloud_so.dir/rule
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/cloud_so.dir/rule
 .PHONY : src/CMakeFiles/cloud_so.dir/rule
 
 # Convenience name for target.
@@ -123,7 +123,7 @@ cloud_so: src/CMakeFiles/cloud_so.dir/rule
 
 # fast build rule for target.
 cloud_so/fast:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/build
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/build
 .PHONY : cloud_so/fast
 
 cloudmessage.o: cloudmessage.cpp.o
@@ -131,8 +131,8 @@ cloudmessage.o: cloudmessage.cpp.o
 
 # target to build an object file
 cloudmessage.cpp.o:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/cloudmessage.cpp.o
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/cloudmessage.cpp.o
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/cloudmessage.cpp.o
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/cloudmessage.cpp.o
 .PHONY : cloudmessage.cpp.o
 
 cloudmessage.i: cloudmessage.cpp.i
@@ -140,8 +140,8 @@ cloudmessage.i: cloudmessage.cpp.i
 
 # target to preprocess a source file
 cloudmessage.cpp.i:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/cloudmessage.cpp.i
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/cloudmessage.cpp.i
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/cloudmessage.cpp.i
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/cloudmessage.cpp.i
 .PHONY : cloudmessage.cpp.i
 
 cloudmessage.s: cloudmessage.cpp.s
@@ -149,8 +149,8 @@ cloudmessage.s: cloudmessage.cpp.s
 
 # target to generate assembly for a file
 cloudmessage.cpp.s:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/cloudmessage.cpp.s
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/cloudmessage.cpp.s
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/cloudmessage.cpp.s
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/cloudmessage.cpp.s
 .PHONY : cloudmessage.cpp.s
 
 coqueue.o: coqueue.cpp.o
@@ -158,8 +158,8 @@ coqueue.o: coqueue.cpp.o
 
 # target to build an object file
 coqueue.cpp.o:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/coqueue.cpp.o
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/coqueue.cpp.o
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/coqueue.cpp.o
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/coqueue.cpp.o
 .PHONY : coqueue.cpp.o
 
 coqueue.i: coqueue.cpp.i
@@ -167,8 +167,8 @@ coqueue.i: coqueue.cpp.i
 
 # target to preprocess a source file
 coqueue.cpp.i:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/coqueue.cpp.i
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/coqueue.cpp.i
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/coqueue.cpp.i
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/coqueue.cpp.i
 .PHONY : coqueue.cpp.i
 
 coqueue.s: coqueue.cpp.s
@@ -176,8 +176,8 @@ coqueue.s: coqueue.cpp.s
 
 # target to generate assembly for a file
 coqueue.cpp.s:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/coqueue.cpp.s
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/coqueue.cpp.s
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/coqueue.cpp.s
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/coqueue.cpp.s
 .PHONY : coqueue.cpp.s
 
 coroutine.o: coroutine.cpp.o
@@ -185,8 +185,8 @@ coroutine.o: coroutine.cpp.o
 
 # target to build an object file
 coroutine.cpp.o:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/coroutine.cpp.o
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/coroutine.cpp.o
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/coroutine.cpp.o
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/coroutine.cpp.o
 .PHONY : coroutine.cpp.o
 
 coroutine.i: coroutine.cpp.i
@@ -194,8 +194,8 @@ coroutine.i: coroutine.cpp.i
 
 # target to preprocess a source file
 coroutine.cpp.i:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/coroutine.cpp.i
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/coroutine.cpp.i
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/coroutine.cpp.i
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/coroutine.cpp.i
 .PHONY : coroutine.cpp.i
 
 coroutine.s: coroutine.cpp.s
@@ -203,8 +203,8 @@ coroutine.s: coroutine.cpp.s
 
 # target to generate assembly for a file
 coroutine.cpp.s:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/coroutine.cpp.s
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/coroutine.cpp.s
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/coroutine.cpp.s
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/coroutine.cpp.s
 .PHONY : coroutine.cpp.s
 
 schedule.o: schedule.cpp.o
@@ -212,8 +212,8 @@ schedule.o: schedule.cpp.o
 
 # target to build an object file
 schedule.cpp.o:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/schedule.cpp.o
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/schedule.cpp.o
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/schedule.cpp.o
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/schedule.cpp.o
 .PHONY : schedule.cpp.o
 
 schedule.i: schedule.cpp.i
@@ -221,8 +221,8 @@ schedule.i: schedule.cpp.i
 
 # target to preprocess a source file
 schedule.cpp.i:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/schedule.cpp.i
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/schedule.cpp.i
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/schedule.cpp.i
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/schedule.cpp.i
 .PHONY : schedule.cpp.i
 
 schedule.s: schedule.cpp.s
@@ -230,8 +230,8 @@ schedule.s: schedule.cpp.s
 
 # target to generate assembly for a file
 schedule.cpp.s:
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/schedule.cpp.s
-	cd /mnt/shared/cloud/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/schedule.cpp.s
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/schedule.cpp.s
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/schedule.cpp.s
 .PHONY : schedule.cpp.s
 
 # Help Target
@@ -267,6 +267,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/shared/cloud/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /mnt/shared/Cloudy/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

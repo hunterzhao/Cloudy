@@ -4,13 +4,13 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/shared/cloud/test/main.cpp" "/mnt/shared/cloud/build/test/CMakeFiles/test.dir/main.cpp.o"
+  "/mnt/shared/Cloudy/test/main.cpp" "/mnt/shared/Cloudy/build/test/CMakeFiles/test.dir/main.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/mnt/shared/cloud/build/src/CMakeFiles/cloud.dir/DependInfo.cmake"
+  "/mnt/shared/Cloudy/build/src/CMakeFiles/cloud.dir/DependInfo.cmake"
   )
 
 # The include file search paths:

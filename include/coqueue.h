@@ -3,19 +3,20 @@
 
 #include <map>
 #include <queue>
+#include "cloudmessage.h"
+
 namespace cloud {
 class Coroutine;
-class CloudMessage;
 class Block;
 class Coqueue {
 public:
     Coqueue();
     ~Coqueue();
-    CloudMessage* WaitRead(Coroutine* co);
-    void WaitWrite(CloudMessage* val, Coroutine* co);
+    CloudMessage WaitRead(Coroutine* co);
+    void WaitWrite(CloudMessage& val, Coroutine* co);
 
 private:
-    std::queue<CloudMessage*> queue_msg_;
+    std::queue<CloudMessage> queue_msg_;
     Block* block_write_;
     Block* block_read_;
     int size_;
@@ -35,8 +36,12 @@ public:
         coqueue_map_[id] = q;
         return q;
     }
+
+    void DeleteQueue(Coqueue* coqueue) {
+        delete coqueue;
+    }
     
-    void SendMessage(int stageid, CloudMessage* msg, Coroutine* co) {
+    void SendMessage(int stageid, CloudMessage& msg, Coroutine* co) {
         coqueue_map_[stageid]->WaitWrite(msg, co);
     }
 

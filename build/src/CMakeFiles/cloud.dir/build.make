@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/shared/cloud
+CMAKE_SOURCE_DIR = /mnt/shared/Cloudy
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/shared/cloud/build
+CMAKE_BINARY_DIR = /mnt/shared/Cloudy/build
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/cloud.dir/depend.make
@@ -51,17 +51,17 @@ include src/CMakeFiles/cloud.dir/flags.make
 
 src/CMakeFiles/cloud.dir/coqueue.cpp.o: src/CMakeFiles/cloud.dir/flags.make
 src/CMakeFiles/cloud.dir/coqueue.cpp.o: ../src/coqueue.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/cloud/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/Cloudy/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cloud.dir/coqueue.cpp.o"
-	cd /mnt/shared/cloud/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cloud.dir/coqueue.cpp.o -c /mnt/shared/cloud/src/coqueue.cpp
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cloud.dir/coqueue.cpp.o -c /mnt/shared/Cloudy/src/coqueue.cpp
 
 src/CMakeFiles/cloud.dir/coqueue.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cloud.dir/coqueue.cpp.i"
-	cd /mnt/shared/cloud/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /mnt/shared/cloud/src/coqueue.cpp > CMakeFiles/cloud.dir/coqueue.cpp.i
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /mnt/shared/Cloudy/src/coqueue.cpp > CMakeFiles/cloud.dir/coqueue.cpp.i
 
 src/CMakeFiles/cloud.dir/coqueue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cloud.dir/coqueue.cpp.s"
-	cd /mnt/shared/cloud/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /mnt/shared/cloud/src/coqueue.cpp -o CMakeFiles/cloud.dir/coqueue.cpp.s
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /mnt/shared/Cloudy/src/coqueue.cpp -o CMakeFiles/cloud.dir/coqueue.cpp.s
 
 src/CMakeFiles/cloud.dir/coqueue.cpp.o.requires:
 .PHONY : src/CMakeFiles/cloud.dir/coqueue.cpp.o.requires
@@ -74,17 +74,17 @@ src/CMakeFiles/cloud.dir/coqueue.cpp.o.provides.build: src/CMakeFiles/cloud.dir/
 
 src/CMakeFiles/cloud.dir/coroutine.cpp.o: src/CMakeFiles/cloud.dir/flags.make
 src/CMakeFiles/cloud.dir/coroutine.cpp.o: ../src/coroutine.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/cloud/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/Cloudy/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cloud.dir/coroutine.cpp.o"
-	cd /mnt/shared/cloud/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cloud.dir/coroutine.cpp.o -c /mnt/shared/cloud/src/coroutine.cpp
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cloud.dir/coroutine.cpp.o -c /mnt/shared/Cloudy/src/coroutine.cpp
 
 src/CMakeFiles/cloud.dir/coroutine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cloud.dir/coroutine.cpp.i"
-	cd /mnt/shared/cloud/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /mnt/shared/cloud/src/coroutine.cpp > CMakeFiles/cloud.dir/coroutine.cpp.i
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /mnt/shared/Cloudy/src/coroutine.cpp > CMakeFiles/cloud.dir/coroutine.cpp.i
 
 src/CMakeFiles/cloud.dir/coroutine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cloud.dir/coroutine.cpp.s"
-	cd /mnt/shared/cloud/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /mnt/shared/cloud/src/coroutine.cpp -o CMakeFiles/cloud.dir/coroutine.cpp.s
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /mnt/shared/Cloudy/src/coroutine.cpp -o CMakeFiles/cloud.dir/coroutine.cpp.s
 
 src/CMakeFiles/cloud.dir/coroutine.cpp.o.requires:
 .PHONY : src/CMakeFiles/cloud.dir/coroutine.cpp.o.requires
@@ -97,17 +97,17 @@ src/CMakeFiles/cloud.dir/coroutine.cpp.o.provides.build: src/CMakeFiles/cloud.di
 
 src/CMakeFiles/cloud.dir/schedule.cpp.o: src/CMakeFiles/cloud.dir/flags.make
 src/CMakeFiles/cloud.dir/schedule.cpp.o: ../src/schedule.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/cloud/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/Cloudy/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cloud.dir/schedule.cpp.o"
-	cd /mnt/shared/cloud/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cloud.dir/schedule.cpp.o -c /mnt/shared/cloud/src/schedule.cpp
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cloud.dir/schedule.cpp.o -c /mnt/shared/Cloudy/src/schedule.cpp
 
 src/CMakeFiles/cloud.dir/schedule.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cloud.dir/schedule.cpp.i"
-	cd /mnt/shared/cloud/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /mnt/shared/cloud/src/schedule.cpp > CMakeFiles/cloud.dir/schedule.cpp.i
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /mnt/shared/Cloudy/src/schedule.cpp > CMakeFiles/cloud.dir/schedule.cpp.i
 
 src/CMakeFiles/cloud.dir/schedule.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cloud.dir/schedule.cpp.s"
-	cd /mnt/shared/cloud/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /mnt/shared/cloud/src/schedule.cpp -o CMakeFiles/cloud.dir/schedule.cpp.s
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /mnt/shared/Cloudy/src/schedule.cpp -o CMakeFiles/cloud.dir/schedule.cpp.s
 
 src/CMakeFiles/cloud.dir/schedule.cpp.o.requires:
 .PHONY : src/CMakeFiles/cloud.dir/schedule.cpp.o.requires
@@ -120,17 +120,17 @@ src/CMakeFiles/cloud.dir/schedule.cpp.o.provides.build: src/CMakeFiles/cloud.dir
 
 src/CMakeFiles/cloud.dir/cloudmessage.cpp.o: src/CMakeFiles/cloud.dir/flags.make
 src/CMakeFiles/cloud.dir/cloudmessage.cpp.o: ../src/cloudmessage.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/cloud/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/Cloudy/build/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cloud.dir/cloudmessage.cpp.o"
-	cd /mnt/shared/cloud/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cloud.dir/cloudmessage.cpp.o -c /mnt/shared/cloud/src/cloudmessage.cpp
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cloud.dir/cloudmessage.cpp.o -c /mnt/shared/Cloudy/src/cloudmessage.cpp
 
 src/CMakeFiles/cloud.dir/cloudmessage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cloud.dir/cloudmessage.cpp.i"
-	cd /mnt/shared/cloud/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /mnt/shared/cloud/src/cloudmessage.cpp > CMakeFiles/cloud.dir/cloudmessage.cpp.i
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /mnt/shared/Cloudy/src/cloudmessage.cpp > CMakeFiles/cloud.dir/cloudmessage.cpp.i
 
 src/CMakeFiles/cloud.dir/cloudmessage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cloud.dir/cloudmessage.cpp.s"
-	cd /mnt/shared/cloud/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /mnt/shared/cloud/src/cloudmessage.cpp -o CMakeFiles/cloud.dir/cloudmessage.cpp.s
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /mnt/shared/Cloudy/src/cloudmessage.cpp -o CMakeFiles/cloud.dir/cloudmessage.cpp.s
 
 src/CMakeFiles/cloud.dir/cloudmessage.cpp.o.requires:
 .PHONY : src/CMakeFiles/cloud.dir/cloudmessage.cpp.o.requires
@@ -158,8 +158,8 @@ cloud_EXTERNAL_OBJECTS =
 ../lib/libcloud.a: src/CMakeFiles/cloud.dir/build.make
 ../lib/libcloud.a: src/CMakeFiles/cloud.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX static library ../../lib/libcloud.a"
-	cd /mnt/shared/cloud/build/src && $(CMAKE_COMMAND) -P CMakeFiles/cloud.dir/cmake_clean_target.cmake
-	cd /mnt/shared/cloud/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cloud.dir/link.txt --verbose=$(VERBOSE)
+	cd /mnt/shared/Cloudy/build/src && $(CMAKE_COMMAND) -P CMakeFiles/cloud.dir/cmake_clean_target.cmake
+	cd /mnt/shared/Cloudy/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cloud.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/cloud.dir/build: ../lib/libcloud.a
@@ -172,10 +172,10 @@ src/CMakeFiles/cloud.dir/requires: src/CMakeFiles/cloud.dir/cloudmessage.cpp.o.r
 .PHONY : src/CMakeFiles/cloud.dir/requires
 
 src/CMakeFiles/cloud.dir/clean:
-	cd /mnt/shared/cloud/build/src && $(CMAKE_COMMAND) -P CMakeFiles/cloud.dir/cmake_clean.cmake
+	cd /mnt/shared/Cloudy/build/src && $(CMAKE_COMMAND) -P CMakeFiles/cloud.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/cloud.dir/clean
 
 src/CMakeFiles/cloud.dir/depend:
-	cd /mnt/shared/cloud/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/shared/cloud /mnt/shared/cloud/src /mnt/shared/cloud/build /mnt/shared/cloud/build/src /mnt/shared/cloud/build/src/CMakeFiles/cloud.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/shared/Cloudy/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/shared/Cloudy /mnt/shared/Cloudy/src /mnt/shared/Cloudy/build /mnt/shared/Cloudy/build/src /mnt/shared/Cloudy/build/src/CMakeFiles/cloud.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/cloud.dir/depend
 
