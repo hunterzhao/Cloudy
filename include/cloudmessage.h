@@ -6,6 +6,7 @@
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
+#include "rapidjson/prettywriter.h"
 
 namespace cloud {
 class CloudMessage {
@@ -19,7 +20,7 @@ public:
 
    CloudMessage(const char* str);
 
-   CloudMessage(const CloudMessage&);
+   CloudMessage(CloudMessage&);
    
    CloudMessage(CloudMessage&& msg) noexcept;
    
@@ -39,7 +40,7 @@ public:
 
    std::string Decode();
 
-   void SetData(const char* data, size_t data_len);
+   void SetData(const char* data);
 
    char* GetData() const;
 
@@ -51,11 +52,12 @@ public:
 
    void RemoveCount();
 
-private: 
+   rapidjson::Document document_;
+//private: 
    char *data_ = nullptr;
    std::size_t *count_ = nullptr;
    std::size_t data_len_ = 0;
-   rapidjson::Document document_;
+   
 };
 }
 #endif // CLOUDMESSAGE_H

@@ -15,6 +15,10 @@ Schedule::Schedule() {
     }
 }
 
+Schedule::~Schedule() {
+    close(epollfd_);
+}
+
 void Schedule::mainfunc(uint32_t low32, uint32_t hi32) {
 	uintptr_t ptr = (uintptr_t) low32 | ((uintptr_t) hi32 << 32);
 	Schedule *S = reinterpret_cast<Schedule *>(ptr);
@@ -97,8 +101,9 @@ void Schedule::AddTask(Coroutine* co) {
 
 	if (co->status_ == COR_READY/* || co->status_ == COR_BLOCK*/)                                                                                                  
 		AddMission(co);
-
-    struct epoll_event ev;
+    
+    //为任务注册到epoll上
+    struct epoll_event ev = {0};
     ev.events = EPOLLIN;
     ev.data.fd = co->fd_;
     if(epoll_ctl(epollfd_, EPOLL_CTL_ADD, co->fd_, &ev) == -1) {

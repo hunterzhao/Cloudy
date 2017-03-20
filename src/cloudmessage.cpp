@@ -1,9 +1,10 @@
 #include <string>
+#include <stdio.h>
 #include "cloudmessage.h"
 
 namespace cloud {
-CloudMessage::CloudMessage() : count_(new std::size_t(0)) {
-
+CloudMessage::CloudMessage() : count_(new std::size_t(1)) {
+    document_.SetObject();
 }
 
 CloudMessage::CloudMessage(const char* str) : count_(new std::size_t(1)) {
@@ -14,19 +15,23 @@ CloudMessage::CloudMessage(const char* str) : count_(new std::size_t(1)) {
     ::memcpy(data_, str, len);
 }
 
-CloudMessage::CloudMessage(const CloudMessage& msg)
-    : data_(msg.GetData()), count_(msg.GetCount()), data_len_(msg.GetDataLen())
-{
+CloudMessage::CloudMessage(CloudMessage& msg)
+    : data_(msg.data_), count_(msg.count_), data_len_(msg.data_len_)
+{ 
     AddCount();
+    document_.CopyFrom(msg.document_, document_.GetAllocator());
 }
 
 CloudMessage::CloudMessage(CloudMessage&& msg) noexcept
-    : data_(msg.GetData()), count_(msg.GetCount()), data_len_(msg.GetDataLen())
+    : data_(msg.data_), count_(msg.count_), data_len_(msg.data_len_)
 {
     //移动源对象会在移动后被销毁，所以必须加AddCount
     AddCount();
-    // msg.GetData() = nullptr;
-    // msg.GetCount() = nullptr;
+    document_.SetObject();
+    document_.CopyFrom(msg.document_, document_.GetAllocator());
+
+    msg.data_ = nullptr;
+    msg.count_ = nullptr;
 }
 
 CloudMessage& CloudMessage::operator=(CloudMessage&& msg) noexcept 
@@ -36,9 +41,11 @@ CloudMessage& CloudMessage::operator=(CloudMessage&& msg) noexcept
         data_ = msg.GetData();
         data_len_ = msg.GetDataLen();
         count_ = msg.GetCount();
+        document_.SetObject();
+        document_.CopyFrom(msg.document_, document_.GetAllocator());
         AddCount();
-        // msg.GetData() = nullptr;
-        // msg.GetCount() = nullptr;
+        msg.data_ = nullptr;
+        msg.count_ = nullptr;
     }
     return *this;
 }
@@ -49,6 +56,9 @@ CloudMessage& CloudMessage::operator=(CloudMessage& msg) {
     data_ = msg.GetData();
     data_len_ = msg.GetDataLen();
     count_ = msg.GetCount();
+    document_.SetObject();
+    document_.CopyFrom(msg.document_, document_.GetAllocator());
+    assert(document_.IsObject());
     return *this;
 }
 
@@ -87,8 +97,8 @@ std::string CloudMessage::Decode() {
     return decode.GetString();
 }
 
-void CloudMessage::SetData(const char* data, size_t data_len) {
-    data_len_ = data_len + 1;
+void CloudMessage::SetData(const char* data) {
+    data_len_ = strlen(data) + 1;
     if (nullptr != data_ )
        delete data_;
 
@@ -115,12 +125,18 @@ void CloudMessage::AddCount() {
 }
 
 void CloudMessage::RemoveCount() {
+    if(nullptr == count_)
+        return;
     --*count_;
-    if(*count_ == 0) {
-        if (nullptr != data_)
+    if(*count_ <= 0) {
+        if (nullptr != data_) {
             delete[] data_;
-        if (nullptr != count_)
-            delete count_; 
+            data_ = nullptr;
+        }
+       
+        delete count_; 
+        count_ = nullptr;
+        
     }
 } 
 }

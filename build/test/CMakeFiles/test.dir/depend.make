@@ -20,14 +20,21 @@ test/CMakeFiles/test.dir/main.cpp.o: .././deps/rapidjson/internal/swap.h
 test/CMakeFiles/test.dir/main.cpp.o: .././deps/rapidjson/memorystream.h
 test/CMakeFiles/test.dir/main.cpp.o: .././deps/rapidjson/msinttypes/inttypes.h
 test/CMakeFiles/test.dir/main.cpp.o: .././deps/rapidjson/msinttypes/stdint.h
+test/CMakeFiles/test.dir/main.cpp.o: .././deps/rapidjson/prettywriter.h
 test/CMakeFiles/test.dir/main.cpp.o: .././deps/rapidjson/rapidjson.h
 test/CMakeFiles/test.dir/main.cpp.o: .././deps/rapidjson/reader.h
 test/CMakeFiles/test.dir/main.cpp.o: .././deps/rapidjson/stream.h
 test/CMakeFiles/test.dir/main.cpp.o: .././deps/rapidjson/stringbuffer.h
 test/CMakeFiles/test.dir/main.cpp.o: .././deps/rapidjson/writer.h
 test/CMakeFiles/test.dir/main.cpp.o: .././include/cloudmessage.h
+test/CMakeFiles/test.dir/main.cpp.o: .././include/cloudserver.h
+test/CMakeFiles/test.dir/main.cpp.o: .././include/cloudsession.h
+test/CMakeFiles/test.dir/main.cpp.o: .././include/cloudtcphandle.h
 test/CMakeFiles/test.dir/main.cpp.o: .././include/coqueue.h
 test/CMakeFiles/test.dir/main.cpp.o: .././include/coroutine.h
+test/CMakeFiles/test.dir/main.cpp.o: .././include/loop.h
 test/CMakeFiles/test.dir/main.cpp.o: .././include/schedule.h
+test/CMakeFiles/test.dir/main.cpp.o: .././include/singleton.h
+test/CMakeFiles/test.dir/main.cpp.o: .././include/spinlock.h
 test/CMakeFiles/test.dir/main.cpp.o: ../test/main.cpp
 

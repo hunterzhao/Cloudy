@@ -16,6 +16,8 @@ public:
 		static Schedule sche;
         return sche;
 	}
+
+   ~Schedule();
    static void mainfunc(uint32_t low32, uint32_t hi32);
    void ResumeCo(Coroutine* co);
    void AddTask(Coroutine* co);
@@ -23,7 +25,7 @@ public:
    void SaveStack(Coroutine* co, char *top);
    void YieldCo(Coroutine* co);
    void Loop();
-
+    
 private:
    Schedule();
    Schedule(const Schedule&) = delete;

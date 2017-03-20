@@ -3,7 +3,10 @@
 
 #include <map>
 #include <queue>
+#include <mutex>
+#include <assert.h>
 #include "cloudmessage.h"
+#include "singleton.h"
 
 namespace cloud {
 class Coroutine;
@@ -14,6 +17,7 @@ public:
     ~Coqueue();
     CloudMessage WaitRead(Coroutine* co);
     void WaitWrite(CloudMessage& val, Coroutine* co);
+    void NoWaitWrite(CloudMessage& val);
 
 private:
     std::queue<CloudMessage> queue_msg_;
@@ -24,32 +28,41 @@ private:
 };
 
 class Block;
-class CoqueueMgr {
+class CoqueueMgr : public Singleton<CoqueueMgr> {
 public:
-    static CoqueueMgr& Instance() {
-    	static CoqueueMgr mgr_; //it's thread-safe in c++11
-        return mgr_;
+    friend class Singleton<CoqueueMgr>;
+    
+    ~CoqueueMgr() {
+        for (auto& it : coqueue_map_)
+            delete it.second;
     }
 
     Coqueue* CreateQueue(int id) {
+        std::lock_guard<CoqueueMgr> lck(*this);
         Coqueue* q = new Coqueue;
         coqueue_map_[id] = q;
         return q;
     }
 
     void DeleteQueue(Coqueue* coqueue) {
+        std::lock_guard<CoqueueMgr> lck(*this);
         delete coqueue;
     }
     
     void SendMessage(int stageid, CloudMessage& msg, Coroutine* co) {
+        std::lock_guard<CoqueueMgr> lck(*this);
+        assert(msg.document_.IsObject());
         coqueue_map_[stageid]->WaitWrite(msg, co);
     }
 
-private:
-    CoqueueMgr() {}
-    CoqueueMgr(const CoqueueMgr&) = delete;
-    CoqueueMgr& operator=(const CoqueueMgr&) = delete;
+    void SendOuterMessage(int stageid, CloudMessage& msg) {
+        std::lock_guard<CoqueueMgr> lck(*this);
+        coqueue_map_[stageid]->NoWaitWrite(msg);
+    }
 
+private:
+
+    CoqueueMgr() = default;
     std::map<int, Coqueue*> coqueue_map_;
 };
 

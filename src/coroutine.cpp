@@ -1,4 +1,5 @@
 #include <sys/eventfd.h>
+#include <unistd.h>
 #include "coroutine.h"
 #include "cloudmessage.h"
 #include "coqueue.h"
@@ -20,6 +21,8 @@ Coroutine::~Coroutine() {
     if (nullptr != queue_) {
         CoqueueMgr::Instance().DeleteQueue(queue_);
     }
+
+    close(fd_);
 }
 
 void Coroutine::SetQueue(Coqueue* queue) {

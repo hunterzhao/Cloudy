@@ -4,6 +4,11 @@ set(SRC_SOURCE
        coroutine.cpp
        schedule.cpp
        cloudmessage.cpp
+       cloudserver.cpp
+       cloudclient.cpp
+       loop.cpp
+       cloudtcphandle.cpp
+       cloudsession.cpp
        )
 
 add_library(cloud STATIC ${SRC_SOURCE})

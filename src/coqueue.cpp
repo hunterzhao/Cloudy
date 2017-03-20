@@ -1,4 +1,5 @@
 #include <utility>
+#include <stdio.h>
 #include "coqueue.h"
 #include "block.h"
 
@@ -45,6 +46,13 @@ void Coqueue::WaitWrite(CloudMessage& val, Coroutine* co) {
     block_read_->WakeBlock();
     // 让出调度器
     Schedule::Instance().YieldCo(co);
+}
+
+void Coqueue::NoWaitWrite(CloudMessage& val) {
+    if(cap_ == size_) cap_++;
+    queue_msg_.push(std::move(val));
+    size_++;
+    block_read_->WakeBlock();
 }
 
 }

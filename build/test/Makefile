@@ -99,6 +99,20 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+test/CMakeFiles/client.dir/rule:
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/client.dir/rule
+.PHONY : test/CMakeFiles/client.dir/rule
+
+# Convenience name for target.
+client: test/CMakeFiles/client.dir/rule
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/client.dir/build.make test/CMakeFiles/client.dir/build
+.PHONY : client/fast
+
+# Convenience name for target.
 test/CMakeFiles/test.dir/rule:
 	cd /mnt/shared/Cloudy/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test.dir/rule
 .PHONY : test/CMakeFiles/test.dir/rule
@@ -111,6 +125,30 @@ test: test/CMakeFiles/test.dir/rule
 test/fast:
 	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/build
 .PHONY : test/fast
+
+client_test.o: client_test.cpp.o
+.PHONY : client_test.o
+
+# target to build an object file
+client_test.cpp.o:
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/client.dir/build.make test/CMakeFiles/client.dir/client_test.cpp.o
+.PHONY : client_test.cpp.o
+
+client_test.i: client_test.cpp.i
+.PHONY : client_test.i
+
+# target to preprocess a source file
+client_test.cpp.i:
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/client.dir/build.make test/CMakeFiles/client.dir/client_test.cpp.i
+.PHONY : client_test.cpp.i
+
+client_test.s: client_test.cpp.s
+.PHONY : client_test.s
+
+# target to generate assembly for a file
+client_test.cpp.s:
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/client.dir/build.make test/CMakeFiles/client.dir/client_test.cpp.s
+.PHONY : client_test.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -142,9 +180,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... client"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... client_test.o"
+	@echo "... client_test.i"
+	@echo "... client_test.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

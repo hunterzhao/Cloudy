@@ -1,3 +1,4 @@
+/mnt/shared/Cloudy/build/test/CMakeFiles/client.dir
 /mnt/shared/Cloudy/build/src/CMakeFiles/cloud.dir
 /mnt/shared/Cloudy/build/src/CMakeFiles/cloud_so.dir
 /mnt/shared/Cloudy/build/test/CMakeFiles/test.dir

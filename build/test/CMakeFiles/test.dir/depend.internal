@@ -21,13 +21,20 @@ test/CMakeFiles/test.dir/main.cpp.o
  .././deps/rapidjson/memorystream.h
  .././deps/rapidjson/msinttypes/inttypes.h
  .././deps/rapidjson/msinttypes/stdint.h
+ .././deps/rapidjson/prettywriter.h
  .././deps/rapidjson/rapidjson.h
  .././deps/rapidjson/reader.h
  .././deps/rapidjson/stream.h
  .././deps/rapidjson/stringbuffer.h
  .././deps/rapidjson/writer.h
  .././include/cloudmessage.h
+ .././include/cloudserver.h
+ .././include/cloudsession.h
+ .././include/cloudtcphandle.h
  .././include/coqueue.h
  .././include/coroutine.h
+ .././include/loop.h
  .././include/schedule.h
+ .././include/singleton.h
+ .././include/spinlock.h
  /mnt/shared/Cloudy/test/main.cpp
