@@ -256,6 +256,29 @@ src/CMakeFiles/cloud_so.dir/cloudsession.cpp.o.provides: src/CMakeFiles/cloud_so
 
 src/CMakeFiles/cloud_so.dir/cloudsession.cpp.o.provides.build: src/CMakeFiles/cloud_so.dir/cloudsession.cpp.o
 
+src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o: src/CMakeFiles/cloud_so.dir/flags.make
+src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o: ../src/cloudprocessor.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/Cloudy/build/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o"
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o -c /mnt/shared/Cloudy/src/cloudprocessor.cpp
+
+src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cloud_so.dir/cloudprocessor.cpp.i"
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /mnt/shared/Cloudy/src/cloudprocessor.cpp > CMakeFiles/cloud_so.dir/cloudprocessor.cpp.i
+
+src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cloud_so.dir/cloudprocessor.cpp.s"
+	cd /mnt/shared/Cloudy/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /mnt/shared/Cloudy/src/cloudprocessor.cpp -o CMakeFiles/cloud_so.dir/cloudprocessor.cpp.s
+
+src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o.requires:
+.PHONY : src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o.requires
+
+src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o.provides: src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o.requires
+	$(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o.provides.build
+.PHONY : src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o.provides
+
+src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o.provides.build: src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o
+
 # Object files for target cloud_so
 cloud_so_OBJECTS = \
 "CMakeFiles/cloud_so.dir/coqueue.cpp.o" \
@@ -266,7 +289,8 @@ cloud_so_OBJECTS = \
 "CMakeFiles/cloud_so.dir/cloudclient.cpp.o" \
 "CMakeFiles/cloud_so.dir/loop.cpp.o" \
 "CMakeFiles/cloud_so.dir/cloudtcphandle.cpp.o" \
-"CMakeFiles/cloud_so.dir/cloudsession.cpp.o"
+"CMakeFiles/cloud_so.dir/cloudsession.cpp.o" \
+"CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o"
 
 # External object files for target cloud_so
 cloud_so_EXTERNAL_OBJECTS =
@@ -280,6 +304,7 @@ cloud_so_EXTERNAL_OBJECTS =
 ../lib/libcloud.so: src/CMakeFiles/cloud_so.dir/loop.cpp.o
 ../lib/libcloud.so: src/CMakeFiles/cloud_so.dir/cloudtcphandle.cpp.o
 ../lib/libcloud.so: src/CMakeFiles/cloud_so.dir/cloudsession.cpp.o
+../lib/libcloud.so: src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o
 ../lib/libcloud.so: src/CMakeFiles/cloud_so.dir/build.make
 ../lib/libcloud.so: src/CMakeFiles/cloud_so.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library ../../lib/libcloud.so"
@@ -298,6 +323,7 @@ src/CMakeFiles/cloud_so.dir/requires: src/CMakeFiles/cloud_so.dir/cloudclient.cp
 src/CMakeFiles/cloud_so.dir/requires: src/CMakeFiles/cloud_so.dir/loop.cpp.o.requires
 src/CMakeFiles/cloud_so.dir/requires: src/CMakeFiles/cloud_so.dir/cloudtcphandle.cpp.o.requires
 src/CMakeFiles/cloud_so.dir/requires: src/CMakeFiles/cloud_so.dir/cloudsession.cpp.o.requires
+src/CMakeFiles/cloud_so.dir/requires: src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o.requires
 .PHONY : src/CMakeFiles/cloud_so.dir/requires
 
 src/CMakeFiles/cloud_so.dir/clean:

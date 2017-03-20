@@ -5,6 +5,7 @@
 #include <queue>
 #include <mutex>
 #include <assert.h>
+#include <stdio.h>
 #include "cloudmessage.h"
 #include "singleton.h"
 
@@ -25,6 +26,7 @@ private:
     Block* block_read_;
     int size_;
     int cap_ = 5;
+    std::mutex mtx_;
 };
 
 class Block;
@@ -38,25 +40,21 @@ public:
     }
 
     Coqueue* CreateQueue(int id) {
-        std::lock_guard<CoqueueMgr> lck(*this);
         Coqueue* q = new Coqueue;
         coqueue_map_[id] = q;
         return q;
     }
 
     void DeleteQueue(Coqueue* coqueue) {
-        std::lock_guard<CoqueueMgr> lck(*this);
         delete coqueue;
     }
     
     void SendMessage(int stageid, CloudMessage& msg, Coroutine* co) {
-        std::lock_guard<CoqueueMgr> lck(*this);
         assert(msg.document_.IsObject());
         coqueue_map_[stageid]->WaitWrite(msg, co);
     }
 
     void SendOuterMessage(int stageid, CloudMessage& msg) {
-        std::lock_guard<CoqueueMgr> lck(*this);
         coqueue_map_[stageid]->NoWaitWrite(msg);
     }
 

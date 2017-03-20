@@ -275,6 +275,8 @@ stdint.h
 -
 ucontext.h
 -
+mutex
+-
 
 .././include/loop.h
 uv.h
@@ -286,6 +288,10 @@ sys/epoll.h
 queue
 -
 map
+-
+vector
+-
+thread
 -
 
 .././include/singleton.h
@@ -300,6 +306,8 @@ atomic
 iostream
 -
 assert.h
+-
+mutex
 -
 coqueue.h
 /mnt/shared/Cloudy/test/coqueue.h

@@ -8,7 +8,7 @@
 namespace cloud {
 class CloudServer : public TcpHandle {
 public:
-	static void ServerRun(void* arg);
+	void ServerRun();
 
 	void SetLoop(Loop& loop);
 //static void after_write(uv_write_t* req, int status);

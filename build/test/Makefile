@@ -113,18 +113,18 @@ client/fast:
 .PHONY : client/fast
 
 # Convenience name for target.
-test/CMakeFiles/test.dir/rule:
-	cd /mnt/shared/Cloudy/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test.dir/rule
-.PHONY : test/CMakeFiles/test.dir/rule
+test/CMakeFiles/server.dir/rule:
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/server.dir/rule
+.PHONY : test/CMakeFiles/server.dir/rule
 
 # Convenience name for target.
-test: test/CMakeFiles/test.dir/rule
-.PHONY : test
+server: test/CMakeFiles/server.dir/rule
+.PHONY : server
 
 # fast build rule for target.
-test/fast:
-	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/build
-.PHONY : test/fast
+server/fast:
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/server.dir/build.make test/CMakeFiles/server.dir/build
+.PHONY : server/fast
 
 client_test.o: client_test.cpp.o
 .PHONY : client_test.o
@@ -155,7 +155,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/main.cpp.o
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/server.dir/build.make test/CMakeFiles/server.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -163,7 +163,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/main.cpp.i
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/server.dir/build.make test/CMakeFiles/server.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -171,7 +171,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/main.cpp.s
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f test/CMakeFiles/server.dir/build.make test/CMakeFiles/server.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -183,7 +183,7 @@ help:
 	@echo "... client"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test"
+	@echo "... server"
 	@echo "... client_test.o"
 	@echo "... client_test.i"
 	@echo "... client_test.s"

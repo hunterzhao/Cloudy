@@ -5,15 +5,15 @@
 #include "coqueue.h"
 
 namespace cloud {
-void CloudServer::ServerRun(void* arg) {
+void CloudServer::ServerRun() {
    Loop loop;
-   CloudServer* server = static_cast<CloudServer*>(arg);
-   server->SetLoop(loop);
-   server->Bind(&(server->addr_), 0);
-   server->Listen(SOMAXCONN);
+   SetLoop(loop);
+   Bind(&addr_, 0);
+   Listen(SOMAXCONN);
    printf("server on.\n");
    loop.loop_run(Loop::RUN_DEFAULT);
 }
+
 void CloudServer::SetLoop(Loop& loop) {
    int r = uv_tcp_init(loop_.self(), &tcpServer_);
   // server_closed_ = 0;
@@ -90,7 +90,7 @@ void CloudServer::OnMessage(CloudMessage& msg, uv_stream_t* tcp) {
 }
 
 void CloudServer::Start() {
-   std::thread run(CloudServer::ServerRun, this);
+   std::thread run([this] {this->ServerRun();});
    run.detach();
 }
 

@@ -8,6 +8,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/cloud.dir/loop.cpp.o"
   "CMakeFiles/cloud.dir/cloudtcphandle.cpp.o"
   "CMakeFiles/cloud.dir/cloudsession.cpp.o"
+  "CMakeFiles/cloud.dir/cloudprocessor.cpp.o"
   "../../lib/libcloud.pdb"
   "../../lib/libcloud.a"
 )

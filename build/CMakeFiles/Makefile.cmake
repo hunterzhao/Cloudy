@@ -46,5 +46,5 @@ SET(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/cloud.dir/DependInfo.cmake"
   "src/CMakeFiles/cloud_so.dir/DependInfo.cmake"
   "test/CMakeFiles/client.dir/DependInfo.cmake"
-  "test/CMakeFiles/test.dir/DependInfo.cmake"
+  "test/CMakeFiles/server.dir/DependInfo.cmake"
   )

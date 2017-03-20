@@ -76,7 +76,7 @@ src/preinstall:
 src/CMakeFiles/cloud.dir/all:
 	$(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/depend
 	$(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/Cloudy/build/CMakeFiles  2 3 4 5 6 7 8 9 10
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/Cloudy/build/CMakeFiles  2 3 4 5 6 7 8 9 10 11
 	@echo "Built target cloud"
 .PHONY : src/CMakeFiles/cloud.dir/all
 
@@ -86,7 +86,7 @@ all: src/CMakeFiles/cloud.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/cloud.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/cloud.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/cloud.dir/rule
@@ -111,7 +111,7 @@ clean: src/CMakeFiles/cloud.dir/clean
 src/CMakeFiles/cloud_so.dir/all:
 	$(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/depend
 	$(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/Cloudy/build/CMakeFiles  11 12 13 14 15 16 17 18 19
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/Cloudy/build/CMakeFiles  12 13 14 15 16 17 18 19 20 21
 	@echo "Built target cloud_so"
 .PHONY : src/CMakeFiles/cloud_so.dir/all
 
@@ -121,7 +121,7 @@ all: src/CMakeFiles/cloud_so.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/cloud_so.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/cloud_so.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/cloud_so.dir/rule
@@ -144,12 +144,12 @@ clean: src/CMakeFiles/cloud_so.dir/clean
 
 # Convenience name for "all" pass in the directory.
 test/all: test/CMakeFiles/client.dir/all
-test/all: test/CMakeFiles/test.dir/all
+test/all: test/CMakeFiles/server.dir/all
 .PHONY : test/all
 
 # Convenience name for "clean" pass in the directory.
 test/clean: test/CMakeFiles/client.dir/clean
-test/clean: test/CMakeFiles/test.dir/clean
+test/clean: test/CMakeFiles/server.dir/clean
 .PHONY : test/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -173,7 +173,7 @@ all: test/CMakeFiles/client.dir/all
 
 # Build rule for subdir invocation for target.
 test/CMakeFiles/client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 0
 .PHONY : test/CMakeFiles/client.dir/rule
@@ -192,38 +192,38 @@ clean: test/CMakeFiles/client.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target test/CMakeFiles/test.dir
+# Target rules for target test/CMakeFiles/server.dir
 
 # All Build rule for target.
-test/CMakeFiles/test.dir/all: src/CMakeFiles/cloud.dir/all
-	$(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/depend
-	$(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/Cloudy/build/CMakeFiles  20
-	@echo "Built target test"
-.PHONY : test/CMakeFiles/test.dir/all
+test/CMakeFiles/server.dir/all: src/CMakeFiles/cloud.dir/all
+	$(MAKE) -f test/CMakeFiles/server.dir/build.make test/CMakeFiles/server.dir/depend
+	$(MAKE) -f test/CMakeFiles/server.dir/build.make test/CMakeFiles/server.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /mnt/shared/Cloudy/build/CMakeFiles  22
+	@echo "Built target server"
+.PHONY : test/CMakeFiles/server.dir/all
 
 # Include target in all.
-all: test/CMakeFiles/test.dir/all
+all: test/CMakeFiles/server.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-test/CMakeFiles/test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 10
-	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/test.dir/all
+test/CMakeFiles/server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 11
+	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/shared/Cloudy/build/CMakeFiles 0
-.PHONY : test/CMakeFiles/test.dir/rule
+.PHONY : test/CMakeFiles/server.dir/rule
 
 # Convenience name for target.
-test: test/CMakeFiles/test.dir/rule
-.PHONY : test
+server: test/CMakeFiles/server.dir/rule
+.PHONY : server
 
 # clean rule for target.
-test/CMakeFiles/test.dir/clean:
-	$(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/clean
-.PHONY : test/CMakeFiles/test.dir/clean
+test/CMakeFiles/server.dir/clean:
+	$(MAKE) -f test/CMakeFiles/server.dir/build.make test/CMakeFiles/server.dir/clean
+.PHONY : test/CMakeFiles/server.dir/clean
 
 # clean rule for target.
-clean: test/CMakeFiles/test.dir/clean
+clean: test/CMakeFiles/server.dir/clean
 .PHONY : clean
 
 #=============================================================================

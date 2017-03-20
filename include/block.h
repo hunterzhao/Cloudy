@@ -25,7 +25,6 @@ public:
    void AddBlock(Coroutine* co) {
    	   /* add to task list in schedule */
        block_queue_.push(co);
-       Schedule::Instance().YieldCo(co);
    }
 
 private:

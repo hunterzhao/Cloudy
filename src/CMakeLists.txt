@@ -9,6 +9,7 @@ set(SRC_SOURCE
        loop.cpp
        cloudtcphandle.cpp
        cloudsession.cpp
+       cloudprocessor.cpp
        )
 
 add_library(cloud STATIC ${SRC_SOURCE})

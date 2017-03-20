@@ -6,6 +6,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/mnt/shared/Cloudy/src/cloudclient.cpp" "/mnt/shared/Cloudy/build/src/CMakeFiles/cloud_so.dir/cloudclient.cpp.o"
   "/mnt/shared/Cloudy/src/cloudmessage.cpp" "/mnt/shared/Cloudy/build/src/CMakeFiles/cloud_so.dir/cloudmessage.cpp.o"
+  "/mnt/shared/Cloudy/src/cloudprocessor.cpp" "/mnt/shared/Cloudy/build/src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o"
   "/mnt/shared/Cloudy/src/cloudserver.cpp" "/mnt/shared/Cloudy/build/src/CMakeFiles/cloud_so.dir/cloudserver.cpp.o"
   "/mnt/shared/Cloudy/src/cloudsession.cpp" "/mnt/shared/Cloudy/build/src/CMakeFiles/cloud_so.dir/cloudsession.cpp.o"
   "/mnt/shared/Cloudy/src/cloudtcphandle.cpp" "/mnt/shared/Cloudy/build/src/CMakeFiles/cloud_so.dir/cloudtcphandle.cpp.o"

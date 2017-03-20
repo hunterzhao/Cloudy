@@ -180,6 +180,33 @@ cloudmessage.cpp.s:
 	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/cloudmessage.cpp.s
 .PHONY : cloudmessage.cpp.s
 
+cloudprocessor.o: cloudprocessor.cpp.o
+.PHONY : cloudprocessor.o
+
+# target to build an object file
+cloudprocessor.cpp.o:
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/cloudprocessor.cpp.o
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o
+.PHONY : cloudprocessor.cpp.o
+
+cloudprocessor.i: cloudprocessor.cpp.i
+.PHONY : cloudprocessor.i
+
+# target to preprocess a source file
+cloudprocessor.cpp.i:
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/cloudprocessor.cpp.i
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.i
+.PHONY : cloudprocessor.cpp.i
+
+cloudprocessor.s: cloudprocessor.cpp.s
+.PHONY : cloudprocessor.s
+
+# target to generate assembly for a file
+cloudprocessor.cpp.s:
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud.dir/build.make src/CMakeFiles/cloud.dir/cloudprocessor.cpp.s
+	cd /mnt/shared/Cloudy/build && $(MAKE) -f src/CMakeFiles/cloud_so.dir/build.make src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.s
+.PHONY : cloudprocessor.cpp.s
+
 cloudserver.o: cloudserver.cpp.o
 .PHONY : cloudserver.o
 
@@ -385,6 +412,9 @@ help:
 	@echo "... cloudmessage.o"
 	@echo "... cloudmessage.i"
 	@echo "... cloudmessage.s"
+	@echo "... cloudprocessor.o"
+	@echo "... cloudprocessor.i"
+	@echo "... cloudprocessor.s"
 	@echo "... cloudserver.o"
 	@echo "... cloudserver.i"
 	@echo "... cloudserver.s"

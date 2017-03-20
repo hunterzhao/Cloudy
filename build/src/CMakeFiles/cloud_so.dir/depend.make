@@ -61,6 +61,11 @@ src/CMakeFiles/cloud_so.dir/cloudmessage.cpp.o: .././deps/rapidjson/writer.h
 src/CMakeFiles/cloud_so.dir/cloudmessage.cpp.o: .././include/cloudmessage.h
 src/CMakeFiles/cloud_so.dir/cloudmessage.cpp.o: ../src/cloudmessage.cpp
 
+src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o: .././include/cloudprocessor.h
+src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o: .././include/coroutine.h
+src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o: .././include/schedule.h
+src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o: ../src/cloudprocessor.cpp
+
 src/CMakeFiles/cloud_so.dir/cloudserver.cpp.o: .././deps/rapidjson/allocators.h
 src/CMakeFiles/cloud_so.dir/cloudserver.cpp.o: .././deps/rapidjson/document.h
 src/CMakeFiles/cloud_so.dir/cloudserver.cpp.o: .././deps/rapidjson/encodedstream.h
@@ -221,6 +226,7 @@ src/CMakeFiles/cloud_so.dir/coroutine.cpp.o: .././deps/rapidjson/writer.h
 src/CMakeFiles/cloud_so.dir/coroutine.cpp.o: .././include/cloudmessage.h
 src/CMakeFiles/cloud_so.dir/coroutine.cpp.o: .././include/coqueue.h
 src/CMakeFiles/cloud_so.dir/coroutine.cpp.o: .././include/coroutine.h
+src/CMakeFiles/cloud_so.dir/coroutine.cpp.o: .././include/schedule.h
 src/CMakeFiles/cloud_so.dir/coroutine.cpp.o: .././include/singleton.h
 src/CMakeFiles/cloud_so.dir/coroutine.cpp.o: .././include/spinlock.h
 src/CMakeFiles/cloud_so.dir/coroutine.cpp.o: ../src/coroutine.cpp
@@ -228,6 +234,7 @@ src/CMakeFiles/cloud_so.dir/coroutine.cpp.o: ../src/coroutine.cpp
 src/CMakeFiles/cloud_so.dir/loop.cpp.o: .././include/loop.h
 src/CMakeFiles/cloud_so.dir/loop.cpp.o: ../src/loop.cpp
 
+src/CMakeFiles/cloud_so.dir/schedule.cpp.o: .././include/cloudprocessor.h
 src/CMakeFiles/cloud_so.dir/schedule.cpp.o: .././include/coroutine.h
 src/CMakeFiles/cloud_so.dir/schedule.cpp.o: .././include/schedule.h
 src/CMakeFiles/cloud_so.dir/schedule.cpp.o: ../src/schedule.cpp

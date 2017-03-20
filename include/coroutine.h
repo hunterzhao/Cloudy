@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <ucontext.h>
+#include <mutex>
 
 namespace cloud {
 enum {
@@ -15,6 +16,7 @@ class Coqueue;
 class CloudMessage;
 class Coroutine {
 	friend class Schedule;
+	friend class Processor;
 public:
 	Coroutine();
 
@@ -31,6 +33,10 @@ public:
     void SetStatus(int status) {status_ = status;}
 
     int GetFd() { return fd_;}
+    
+    void SetPro(int pro) { pro_ = pro;}
+
+    int GetPro() { return pro_;}
 
     virtual int OnStart() {return 0;}
 	
@@ -49,6 +55,8 @@ private:
 	ucontext_t ctx_;
 	Coqueue* queue_;
 	int fd_;
+	int pro_;
+    
 };
 }
 #endif

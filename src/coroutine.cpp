@@ -1,8 +1,10 @@
 #include <sys/eventfd.h>
 #include <unistd.h>
+#include <stdio.h>
 #include "coroutine.h"
 #include "cloudmessage.h"
 #include "coqueue.h"
+#include "schedule.h"
 
 #define handle_error(msg) \
     do { perror(msg); exit(1); } while (0)
@@ -36,7 +38,11 @@ void Coroutine::Run() {
 	if (0 != ret) {
 		//LOG->error("start error");
 	}
-
+   // 让出调度器，等待下次的消息唤醒
+    printf("suspend");
+    Schedule::Instance().YieldCo(this);
+    printf("active");
+    
     while(queue_) { 
         CloudMessage msg = queue_->WaitRead(this);
         if (OnEvent(msg) < 0)

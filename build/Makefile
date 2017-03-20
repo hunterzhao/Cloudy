@@ -138,17 +138,17 @@ client/fast:
 .PHONY : client/fast
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named server
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test
-.PHONY : test
+server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 server
+.PHONY : server
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) -f test/CMakeFiles/test.dir/build.make test/CMakeFiles/test.dir/build
-.PHONY : test/fast
+server/fast:
+	$(MAKE) -f test/CMakeFiles/server.dir/build.make test/CMakeFiles/server.dir/build
+.PHONY : server/fast
 
 # Help Target
 help:
@@ -161,7 +161,7 @@ help:
 	@echo "... cloud"
 	@echo "... cloud_so"
 	@echo "... client"
-	@echo "... test"
+	@echo "... server"
 .PHONY : help
 
 

@@ -61,6 +61,11 @@ src/CMakeFiles/cloud_so.dir/cloudmessage.cpp.o
  .././deps/rapidjson/writer.h
  .././include/cloudmessage.h
  /mnt/shared/Cloudy/src/cloudmessage.cpp
+src/CMakeFiles/cloud_so.dir/cloudprocessor.cpp.o
+ .././include/cloudprocessor.h
+ .././include/coroutine.h
+ .././include/schedule.h
+ /mnt/shared/Cloudy/src/cloudprocessor.cpp
 src/CMakeFiles/cloud_so.dir/cloudserver.cpp.o
  .././deps/rapidjson/allocators.h
  .././deps/rapidjson/document.h
@@ -222,6 +227,7 @@ src/CMakeFiles/cloud_so.dir/coroutine.cpp.o
  .././include/cloudmessage.h
  .././include/coqueue.h
  .././include/coroutine.h
+ .././include/schedule.h
  .././include/singleton.h
  .././include/spinlock.h
  /mnt/shared/Cloudy/src/coroutine.cpp
@@ -229,6 +235,7 @@ src/CMakeFiles/cloud_so.dir/loop.cpp.o
  .././include/loop.h
  /mnt/shared/Cloudy/src/loop.cpp
 src/CMakeFiles/cloud_so.dir/schedule.cpp.o
+ .././include/cloudprocessor.h
  .././include/coroutine.h
  .././include/schedule.h
  /mnt/shared/Cloudy/src/schedule.cpp

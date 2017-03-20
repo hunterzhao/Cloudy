@@ -1,5 +1,6 @@
 #include <iostream>
 #include <assert.h>
+#include <mutex>
 #include "coqueue.h"
 #include "coroutine.h"
 #include "cloudmessage.h"
@@ -12,14 +13,19 @@ using namespace cloud;
 
 static const int64_t kStageAID = 111; 
 static const int64_t kStageBID = 112; 
+static std::mutex mtx_;
 
 class TestServer : public CloudServer {
 public:
     TestServer(struct sockaddr_in addr) : CloudServer(addr) {}
 
     void OnMessage(CloudMessage& msg, uv_stream_t* tcp) {
+        {
+          std::lock_guard<std::mutex> lck(mtx_);
+          std::cout<<"server:message got"<<std::endl;
+        }
         CoqueueMgr::Instance().SendOuterMessage(111, msg);
-        session_t session_id = SessionMgr::Instance().GetSessionID(tcp);
+        //session_t session_id = SessionMgr::Instance().GetSessionID(tcp);
         //SessionMgr::Instance().SendMessage(session_id, msg);
     }
 };
@@ -32,14 +38,29 @@ public:
         msg.AddOption("data","world");
         assert(msg.document_.IsObject());
         CoqueueMgr::Instance().SendMessage(kStageBID, msg, this);
-        std::cout<<"A:message already send"<<std::endl;
+        {
+          std::lock_guard<std::mutex> lck(mtx_);    
+          std::cout<<"A:message already send"<<std::endl;
+        }
         
+        /*
+        CloudMessage msg2; 
+        msg2.AddOption("data2","world");
+        assert(msg2.document_.IsObject());
+        CoqueueMgr::Instance().SendMessage(kStageBID, msg2, this);
+        {
+          std::lock_guard<std::mutex> lck(mtx_);    
+          std::cout<<"A:message2 already send"<<std::endl;
+        }
+        */
         return 0;
     }
 
     int OnEvent(CloudMessage& msg) override {
-        
-        std::cout<<"A:"<<msg.GetOptionStr("data")<<std::endl;
+        {
+          std::lock_guard<std::mutex> lck(mtx_);    
+          std::cout<<"A:"<<msg.GetOptionStr("data")<<std::endl;
+        }
         // LOG->info("message get {}", msg->data);
         //CloudMessage msg2;
         //msg2.SetData("hello");     
@@ -60,12 +81,17 @@ public:
     }
 
     int OnEvent(CloudMessage& msg) override {
-        std::cout<<"B"<<msg.GetOptionStr("data")<<std::endl;
-        
+        {
+          std::lock_guard<std::mutex> lck(mtx_);    
+          std::cout<<"B"<<msg.GetOptionStr("data")<<std::endl;
+        }
         CloudMessage msg2;
         msg2.AddOption("data","hello");    
         CoqueueMgr::Instance().SendMessage(kStageAID, msg2, this);
-        std::cout<<"B:message already send"<<std::endl;
+        {
+          std::lock_guard<std::mutex> lck(mtx_);    
+          std::cout<<"B:message already send"<<std::endl;
+        }
         
         return 0;
     }
@@ -88,11 +114,13 @@ int main() {
     StageB* stageB = new StageB;
     stageB->SetId(kStageBID);
     stageB->SetQueue(CoqueueMgr::Instance().CreateQueue(kStageBID));
+    stageB->SetPro(0);
     Schedule::Instance().AddTask(stageB);
     
     StageA* stageA = new StageA;
     stageA->SetId(kStageAID);
     stageA->SetQueue(CoqueueMgr::Instance().CreateQueue(kStageAID));
+    stageB->SetPro(1);
     Schedule::Instance().AddTask(stageA);
     //CoqueueMgr::Instance().SendMessage(kStageAID, msg, stageB);
 
