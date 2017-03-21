@@ -18,8 +18,8 @@ public:
    	   block_queue_.pop();
        uint64_t u = 1;
        write(co->GetFd(), &u, sizeof(uint64_t));
+       // printf("\npush for epoll\n");
    	   //Schedule::Instance().AddTask(co);
-
      }
    }
    void AddBlock(Coroutine* co) {

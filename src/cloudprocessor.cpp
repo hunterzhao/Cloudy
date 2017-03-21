@@ -72,22 +72,22 @@ void Processor::YieldCo(Coroutine* co) {
 }
 
 void Processor::Push(Coroutine* co) {
-    printf("wait for lock5");
+    // printf("wait for lock5");
 	std::lock_guard<std::mutex> lk(mut_);
-    printf("got5 lock\n");
+    // printf("got5 lock\n");
     ready_.push(co);
     cond_.notify_one();
-    printf("release5 lock\n");
+    // printf("release5 lock\n");
 }
 
 Coroutine* Processor::WaitAndPop() {
-    printf("wait for lock4");
+    // printf("wait for lock4");
     std::unique_lock<std::mutex> lk(mut_);
-    printf("got4 lock\n");
+    // printf("got4 lock\n");
     cond_.wait(lk, [this] { return !ready_.empty(); });
     Coroutine* co = ready_.front();
     ready_.pop();
-    printf("release4 lock\n");
+    // printf("release4 lock\n");
     return co;
 }
 

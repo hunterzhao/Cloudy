@@ -18,7 +18,7 @@ Schedule::Schedule() {
 
     //初始化线程池
     for (int i = 0; i < NUM_THREAD_POOL; i++) {
-        Processor* pro =new Processor;
+        Processor* pro = new Processor;
         processors_.emplace_back(pro);
         std::thread run([pro]{ pro->Run();});
         run.detach();
@@ -77,8 +77,9 @@ void Schedule::Loop() {
     	}
         
         //阻塞在这里，等待下一波任务
+        // printf("wait for epoll\n");
         int nfds = epoll_wait(epollfd_, events_, MAX_EVENTS, -1);
-        printf("epoll\n");
+        // printf("epoll\n");
         if(nfds == -1) {
             exit(EXIT_FAILURE);
         }

@@ -45,7 +45,7 @@ void CloudServer::on_connect(uv_stream_t* server, int status) {
    stream->data = (CloudServer*)(server->data);
    r = uv_read_start(stream, TcpHandle::alloc_cb, TcpHandle::read_cb);
    ASSERT(r == 0);
-   printf("wait for data\n");
+   // printf("wait for data\n");
 }
 
 CloudServer::CloudServer(struct sockaddr_in addr) {

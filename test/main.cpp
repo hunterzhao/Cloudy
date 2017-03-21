@@ -43,16 +43,16 @@ public:
           std::cout<<"A:message already send"<<std::endl;
         }
         
-        /*
+        
         CloudMessage msg2; 
-        msg2.AddOption("data2","world");
+        msg2.AddOption("data","world2");
         assert(msg2.document_.IsObject());
         CoqueueMgr::Instance().SendMessage(kStageBID, msg2, this);
         {
           std::lock_guard<std::mutex> lck(mtx_);    
           std::cout<<"A:message2 already send"<<std::endl;
         }
-        */
+        
         return 0;
     }
 
@@ -114,7 +114,7 @@ int main() {
     StageB* stageB = new StageB;
     stageB->SetId(kStageBID);
     stageB->SetQueue(CoqueueMgr::Instance().CreateQueue(kStageBID));
-    stageB->SetPro(0);
+    stageB->SetPro(1);
     Schedule::Instance().AddTask(stageB);
     
     StageA* stageA = new StageA;
