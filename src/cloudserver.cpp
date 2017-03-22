@@ -3,6 +3,7 @@
 #include "cloudserver.h"
 #include "cloudsession.h"
 #include "coqueue.h"
+#include "cloudlog.h"
 
 namespace cloud {
 void CloudServer::ServerRun() {
@@ -10,7 +11,7 @@ void CloudServer::ServerRun() {
    SetLoop(loop);
    Bind(&addr_, 0);
    Listen(SOMAXCONN);
-   printf("server on.\n");
+   LOG->info("server on.");
    loop.loop_run(Loop::RUN_DEFAULT);
 }
 

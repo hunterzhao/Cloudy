@@ -8,6 +8,7 @@
 #include "coqueue.h"
 #include "cloudserver.h"
 #include "cloudsession.h"
+#include "cloudlog.h"
 
 using namespace cloud;
 
@@ -22,8 +23,9 @@ public:
     void OnMessage(CloudMessage& msg, uv_stream_t* tcp) {
         {
           std::lock_guard<std::mutex> lck(mtx_);
-          std::cout<<"server:message got"<<std::endl;
+          LOG->info("server:message got");
         }
+       // 
         CoqueueMgr::Instance().SendOuterMessage(111, msg);
         //session_t session_id = SessionMgr::Instance().GetSessionID(tcp);
         //SessionMgr::Instance().SendMessage(session_id, msg);
@@ -40,9 +42,10 @@ public:
         CoqueueMgr::Instance().SendMessage(kStageBID, msg, this);
         {
           std::lock_guard<std::mutex> lck(mtx_);    
-          std::cout<<"A:message already send"<<std::endl;
+          //std::cout<<"A:message already send"<<std::endl;
+          LOG->info("A:message already send");
         }
-        
+        //
         
         CloudMessage msg2; 
         msg2.AddOption("data","world2");
@@ -50,17 +53,20 @@ public:
         CoqueueMgr::Instance().SendMessage(kStageBID, msg2, this);
         {
           std::lock_guard<std::mutex> lck(mtx_);    
-          std::cout<<"A:message2 already send"<<std::endl;
+          //std::cout<<"A:message2 already send"<<std::endl;
+          LOG->info("A:message2 already send");
         }
-        
+        //
         return 0;
     }
 
     int OnEvent(CloudMessage& msg) override {
         {
           std::lock_guard<std::mutex> lck(mtx_);    
-          std::cout<<"A:"<<msg.GetOptionStr("data")<<std::endl;
+          //std::cout<<"A:"<<msg.GetOptionStr("data")<<std::endl;
+          LOG->info("A:{}",msg.GetOptionStr("data"));
         }
+        //
         // LOG->info("message get {}", msg->data);
         //CloudMessage msg2;
         //msg2.SetData("hello");     
@@ -83,16 +89,19 @@ public:
     int OnEvent(CloudMessage& msg) override {
         {
           std::lock_guard<std::mutex> lck(mtx_);    
-          std::cout<<"B"<<msg.GetOptionStr("data")<<std::endl;
+          //std::cout<<"B"<<msg.GetOptionStr("data")<<std::endl;
+          LOG->info("B:{}",msg.GetOptionStr("data"));
         }
+        //
         CloudMessage msg2;
         msg2.AddOption("data","hello");    
         CoqueueMgr::Instance().SendMessage(kStageAID, msg2, this);
         {
           std::lock_guard<std::mutex> lck(mtx_);    
-          std::cout<<"B:message already send"<<std::endl;
+          //std::cout<<"B:message already send"<<std::endl;
+          LOG->info("B:message already send");
         }
-        
+        //
         return 0;
     }
 
@@ -103,28 +112,30 @@ public:
 
 int main() {    
     //启动server
-    struct sockaddr_in sin = {0};
-    sin.sin_family = AF_INET;
-    sin.sin_port = htons(9123);
-    TestServer server(sin);
-    CloudServer* testServer = &server;
-    testServer->Start();
-    
-    //配置业务stage
-    StageB* stageB = new StageB;
-    stageB->SetId(kStageBID);
-    stageB->SetQueue(CoqueueMgr::Instance().CreateQueue(kStageBID));
-    stageB->SetPro(1);
-    Schedule::Instance().AddTask(stageB);
-    
-    StageA* stageA = new StageA;
-    stageA->SetId(kStageAID);
-    stageA->SetQueue(CoqueueMgr::Instance().CreateQueue(kStageAID));
-    stageB->SetPro(1);
-    Schedule::Instance().AddTask(stageA);
-    //CoqueueMgr::Instance().SendMessage(kStageAID, msg, stageB);
+    LOG_TRY {
+        struct sockaddr_in sin = {0};
+        sin.sin_family = AF_INET;
+        sin.sin_port = htons(9123);
+        TestServer server(sin);
+        CloudServer* testServer = &server;
+        testServer->Start();
+        
+        //配置业务stage
+        StageB* stageB = new StageB;
+        stageB->SetId(kStageBID);
+        stageB->SetQueue(CoqueueMgr::Instance().CreateQueue(kStageBID));
+        stageB->SetPro(1);
+        Schedule::Instance().AddTask(stageB);
+        
+        StageA* stageA = new StageA;
+        stageA->SetId(kStageAID);
+        stageA->SetQueue(CoqueueMgr::Instance().CreateQueue(kStageAID));
+        stageB->SetPro(1);
+        Schedule::Instance().AddTask(stageA);
+        //CoqueueMgr::Instance().SendMessage(kStageAID, msg, stageB);
 
-    Schedule::Instance().Loop();
-    delete stageA;
-    delete stageB;
+        Schedule::Instance().Loop();
+        delete stageA;
+        delete stageB;
+    } LOG_CATCH;
 }
